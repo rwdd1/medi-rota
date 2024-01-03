@@ -1,0 +1,131 @@
+:root {
+  --palette1: rgb(57, 61, 70);
+  --palette2: rgb(68, 73, 83);
+  --palette3: rgb(82, 88, 100);
+  --font1: white;
+  --font2: rgb(201, 198, 198);
+  --gap-big: 20px;
+  --gap-mid: 10px;
+  --gap-small: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--font1)
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  min-height: 100vh;
+  background: var(--palette3);
+  padding: 10vh;
+  gap: var(--gap-big);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+h1,
+h2,
+p,
+table,
+.create-form {
+  text-align: center;
+}
+
+input,
+select {
+  color: black;
+  background: var(--font2);
+  border: none;
+  padding: var(--gap-small);
+  margin: var(--gap-small);
+}
+
+.header {
+  background: var(--palette1);
+  height: 5vh;
+  line-height: 5vh;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-big);
+  padding: 0 var(--gap-mid);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-link {
+  text-decoration-line: none;
+}
+
+.nav-link:hover {
+  color: var(--font2);
+}
+
+button.nav-link {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.auth-form {
+  width: fit-content;
+  gap: var(--gap-mid);
+  align-items: center;
+}
+
+.finder-form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+button:not(.nav-link) {
+  padding: var(--gap-mid) var(--gap-big);
+  white-space: nowrap;
+  border: none;
+  background: var(--palette1);
+  color: var(--font2);
+}
+
+button:not(.nav-link):hover,
+button:not(.nav-link):focus {
+  background: var(--palette2);
+}
+
+.create-form,
+table {
+  width: 50%;
+  border-collapse: separate;
+  margin: var(--gap-big) 25%;
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    padding: 10vh 2.5vh;
+  }
+  table {
+    width: 100%;
+    margin: var(--gap-big) 0;
+  }
+  .finder-form {
+    flex-flow: column nowrap;
+  }
+}
