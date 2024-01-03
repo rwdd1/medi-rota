@@ -17,15 +17,21 @@ export default async function Manage({ admin, id, username }) {
           <UserTable slots={myHours}/>
       </section>
       
-      <section>
-          <h2>My Slots</h2>
-          <AdminTable slots={mySlots}/>
-      </section>
-      
-      <section>
-        <h2>Create Slot</h2>
-        <CreateForm />
-      </section>
+      {
+      (admin) 
+      &&
+      <>
+        <section>
+            <h2>My Slots</h2>
+            <AdminTable slots={mySlots}/>
+        </section>
+        
+        <section>
+          <h2>Create Slot</h2>
+          <CreateForm />
+        </section>
+      </>
+      }
     </>
   )
 }
